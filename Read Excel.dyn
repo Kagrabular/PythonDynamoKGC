@@ -1,0 +1,42 @@
+import clr
+#dynamo default addition
+clr.AddReference('ProtoGeometry')
+#importing MS Excel
+clr.AddReference('Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c')
+from Microsoft.Office.Interop import Excel
+
+from System.Runtime.InteropServices import Marshal
+ 
+from Autodesk.DesignScript.Geometry import *
+
+#path is dynamo node
+path = IN[0]
+
+ex = Excel.ApplicationClass()
+ex.Visible = False;
+ex.DisplayAlerts = False
+workbook = ex.Workbooks.Open(path)
+ws = workbook.Worksheets[1]
+x1range = ws.Range["A4","A7"]
+x2range = ws.Range["B4","B7"]
+x3range = ws.Range["C4","C7"]
+x4range = ws.Range["D4","D7"]
+x5range = ws.Range["E4","E7"]
+x6range = ws.Range["F4","F7"]
+x7range = ws.Range["G4","G7"]
+
+r1 = x1range.Value2
+r2 = x2range.Value2
+r3 = x3range.Value2
+r4 = x4range.Value2
+r5 = x5range.Value2
+r6 = x6range.Value2
+r7 = x7range.Value2
+
+# Assign your output to the OUT variable.
+OUT = r1,r2,r3,r4,r5,r6,r7
+
+ex.ActiveWorkbook.Close(False)
+Marshal.ReleaseComObject(ws)
+Marshal.ReleaseComObject(workbook)
+Marshal.ReleaseComObject(ex)
