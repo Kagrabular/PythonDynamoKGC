@@ -1,0 +1,1052 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Schedule Template v0.001",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSOffice.Data.ImportExcel@var,string,bool,bool",
+      "Id": "118e2ffcd0014083827f5ae31172f815",
+      "Inputs": [
+        {
+          "Id": "dd7b54be16c148a5bebe137ff035bbe4",
+          "Name": "file",
+          "Description": "File representing the Microsoft Excel spreadsheet.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "51b472325e894dfaa65fd44fb26e5b6f",
+          "Name": "sheetName",
+          "Description": "Name of the worksheet containing the data.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d72426333e9b46c4a77990e63e2ff726",
+          "Name": "readAsStrings",
+          "Description": "Toggle to switch between reading Excel file as strings.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a72b4ea1fb7042b4be954470711bd557",
+          "Name": "showExcel",
+          "Description": "Toggle to switch between showing and hiding the main Excel window.\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c4e4012cf91748e09961a2486d299e4e",
+          "Name": "data",
+          "Description": "Rows of data from the Excel worksheet.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Read data from a Microsoft Excel spreadsheet. Data is read by row and returned in a series of lists by row. Rows and columns are zero-indexed; for example, the value in cell A1 will appear in the data list at [0,0]. This node requires Microsoft Excel to be installed.\n\nData.ImportExcel (file: var, sheetName: string, readAsStrings: bool = false, showExcel: bool = true): var[][]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "G:\\Team Drives\\Kenton Grant Consulting\\XX KGC Template\\Finish Schedule Test Area.xlsx",
+      "InputValue": ".\\Finish Schedule Test Area.xlsx",
+      "NodeType": "ExtensionNode",
+      "Id": "fb196a16d39e46d8bd29610f5fdd7eb1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "55703bf664d74719b549579ffa80dc87",
+          "Name": "",
+          "Description": "Filename",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system to get its filename"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.FileObject, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "e62be201a76a4d20ae9809754e3d190d",
+      "Inputs": [
+        {
+          "Id": "573d17f14b944f6d948b5feda292235d",
+          "Name": "path",
+          "Description": "Path to the file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6a8b564e5a5c406e99ad87c21b50f170",
+          "Name": "file",
+          "Description": "File object",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a file object from a path."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "FINISH",
+      "Id": "287c7b1b790b4febb82f83fbfeee70f7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2279f3a10c7047db9b7ec1131ed37060",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "3d81c4a9294a4fe9a95a105f3130d072",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "44cba2d380574fab97ef4744c9443e10",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "32b45371b3864400aa3f45910de3eb97",
+      "Inputs": [
+        {
+          "Id": "7b42a54f71c84840a29c0c07001cbafe",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1551deeb65a94b55a27a0d14e9c733a6",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "4ead381f29ca4b2d871ac30f005ee40a",
+      "Inputs": [
+        {
+          "Id": "78a176ba52524a6da893919f34be98c1",
+          "Name": "item0",
+          "Description": "Item Index #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8836e1a4886c4d388138640f832acb06",
+          "Name": "list",
+          "Description": "A list",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Makes a new list out of the given inputs"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Id": "f85c8831892e487fbacae4ff30204c99",
+      "Inputs": [
+        {
+          "Id": "cd496497048c44b8991dcfb472e50255",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "814ad3368fdc4e84874e652af03b73bb",
+          "Name": "amt",
+          "Description": "Layers of nesting to remove.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6642d02f28334922951016d5e5056e8c",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amt: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "InputValue": 1.0,
+      "Id": "f4f06565c1f442149373d2f3006a3221",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2481de5fae0f4d7f865d58825410cc5c",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Lists.Manage.RemoveNulls@var[]",
+      "Id": "e376af05a0c7493ead60ddab642795b6",
+      "Inputs": [
+        {
+          "Id": "4423fac739474d3aacb88abfd1baf493",
+          "Name": "Data",
+          "Description": "Data with nulls\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ca9690dfad1f48a484f1ecdbeb3dce16",
+          "Name": "Cleaned",
+          "Description": "Cleaned data.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "90cdce24e6d64bd18713f7428c3ad909",
+          "Name": "Indices",
+          "Description": "Index map of cleaned data.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Removes null items from a list\n\nManage.RemoveNulls (Data: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "7cf55d5b620640718603823964292318",
+      "Inputs": [
+        {
+          "Id": "557ba6a5318842eea9428d8382b3d84b",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4fb918dcb9d94d8dab22fdab5e78cbdc",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Clean@var[]..[],bool",
+      "Id": "9a9e8457a03c48a1afa71481aa671b32",
+      "Inputs": [
+        {
+          "Id": "33874d5075384bcfb46a5ab41c3fa1be",
+          "Name": "list",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "732a669b618e43deadd5e0b7bce53bdf",
+          "Name": "preserveIndices",
+          "Description": "Provide an option to preserve the indices of the data such that non-trailing nulls may not be filtered out\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1b52be3476c64db2a7a0a967db2c6f54",
+          "Name": "var[]..[]",
+          "Description": "A list cleaned of nulls and empty lists",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Cleans data of nulls and empty lists from a given list of arbitrary dimension\n\nList.Clean (list: var[]..[], preserveIndices: bool = true): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "df1a982537a54d6fb61f77f83d5d74f2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "440b985cb8df48078b4403e4d6eb60b4",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.GetItemAtIndex@var[]..[],int",
+      "Id": "baf729378bef4eb4a4ae5f3fd8e557e1",
+      "Inputs": [
+        {
+          "Id": "bc4d0b2669a34ea2a1f46ac2dff8c51b",
+          "Name": "list",
+          "Description": "List to fetch an item from.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b6a1be449e98487db516df7128b6b75e",
+          "Name": "index",
+          "Description": "Index of the item to be fetched.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e7d9cbcf25124e6bbb1bdaa6d90f641d",
+          "Name": "item",
+          "Description": "Item in the list at the given index.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Returns an item from the given list that's located at the specified index.\n\nList.GetItemAtIndex (list: var[]..[], index: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.HigherOrder.Map, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "3994a6069154488e9c2542bd2c024245",
+      "Inputs": [
+        {
+          "Id": "94a6dfded25c4f6e8762d4b398419180",
+          "Name": "list",
+          "Description": "The list to map over.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6fdea9881f6c4e6a8a47ba3a6ced059f",
+          "Name": "f(x)",
+          "Description": "The procedure used to map element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1a5ba092f99d4d9ebd2a346478345e78",
+          "Name": "mapped",
+          "Description": "Mapped list",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Applies a function over all elements of a list, generating a new list from the results."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0;",
+      "Id": "7de708912f724c4bbde1c1a4707dda6d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "eba000853648455ab07a8b4ac1c0a252",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "1bafb4bea235473595664a067805478f",
+      "Inputs": [
+        {
+          "Id": "5573844611354b7c84410e3dbdbd2a8a",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ec2eb3f42399414183a7e23930d6f509",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Lists.Manage.RemoveNulls@var[]",
+      "Id": "d430f7d5cec547bc83226d638ad86808",
+      "Inputs": [
+        {
+          "Id": "d53ceb67e1d943ceb7edcc9c21ab366c",
+          "Name": "Data",
+          "Description": "Data with nulls\n\nvar[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "95b6ebbfcdc44c959c779ea161f267e3",
+          "Name": "Cleaned",
+          "Description": "Cleaned data.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "143bdb40c6f94dff8a3fd51f08e39776",
+          "Name": "Indices",
+          "Description": "Index map of cleaned data.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Removes null items from a list\n\nManage.RemoveNulls (Data: var[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Transpose@var[]..[]",
+      "Id": "93e41094596340e8adc1ed2eb794d634",
+      "Inputs": [
+        {
+          "Id": "0dca8be349e848efb3f46ff3de2939cf",
+          "Name": "lists",
+          "Description": "A list of lists to be transposed.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a722465347224a74afa0c8e1a5e0bec0",
+          "Name": "lists",
+          "Description": "A list of transposed lists.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Swaps rows and columns in a list of lists. If there are some rows that are shorter than others, null values are inserted as place holders in the resultant array such that it is always rectangular.\n\nList.Transpose (lists: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Enable Python support and load DesignScript library\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nclr.AddReference('Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c')\r\nfrom Microsoft.Office.Interop import Excel\r\nfrom System.Runtime.InteropServices import Excel\r\nfrom System.Runtime.InteropServices import Marshal\r\n \r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\npath = IN[0]\r\n\r\n# Place your code below this line\r\nex = Excel.ApplicationClass()\r\nex.Visible = False;\r\nex.DisplayAlerts = False\r\nworkbook = ex.Workbooks.Open(path)\r\nws = workbook.Worksheets[1]\r\nx1range = ws.Range[\"A4\", \"A7\"]\r\nx2range = ws.Range[\"B4\". \"B7\"]\r\n\r\nr1 = x1range.Value2\r\nr2 = x2range.Value2\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = r1, r2\r\n\r\nex.ActiveWorkbook.Close(False)\r\nMarshal.ReleaseComObjective(ws)\r\nMarshal.ReleaseComObjective(workbook)\r\nMarshal.ReleaseComObjective(ex)\r\n\r\n",
+      "VariableInputPorts": true,
+      "Id": "24cd196f39ad44c1a4569356313655b2",
+      "Inputs": [
+        {
+          "Id": "4495d6e58fab42dc9016d4671bbab450",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "41f284d8cb9b4d17adee24bd03d8fdb4",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "8e16de5bb59f4a73b668cd0297de08fd",
+      "Inputs": [
+        {
+          "Id": "94dd43d2d6f04ecd887bcd5ad450a7a9",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "edf15d84255447599fcb6d9de36dd95f",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonStringNode, PythonNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "8de2d97d961c4f468f310df8b0284626",
+      "Inputs": [
+        {
+          "Id": "29e5bfb61de944d0a2206f56e88326ac",
+          "Name": "script",
+          "Description": "Python script to run.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1b7a032f4ba24866992b38e38c4fafa5",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "436efc0f21464639909aeb17fab60dcb",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs a IronPython script from a string."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c4e4012cf91748e09961a2486d299e4e",
+      "End": "7b42a54f71c84840a29c0c07001cbafe",
+      "Id": "5abc316db978442ea2f268445236824e"
+    },
+    {
+      "Start": "c4e4012cf91748e09961a2486d299e4e",
+      "End": "4423fac739474d3aacb88abfd1baf493",
+      "Id": "2962ea20226e4c54954931eb0d2f0a93"
+    },
+    {
+      "Start": "55703bf664d74719b549579ffa80dc87",
+      "End": "573d17f14b944f6d948b5feda292235d",
+      "Id": "589d44379df04e309013f8f7e6e93fd4"
+    },
+    {
+      "Start": "6a8b564e5a5c406e99ad87c21b50f170",
+      "End": "dd7b54be16c148a5bebe137ff035bbe4",
+      "Id": "f04ab14ca51e4b2b92cee9dc169d8b1c"
+    },
+    {
+      "Start": "2279f3a10c7047db9b7ec1131ed37060",
+      "End": "51b472325e894dfaa65fd44fb26e5b6f",
+      "Id": "5311967a9ab84de5b44e3327be1b0f84"
+    },
+    {
+      "Start": "44cba2d380574fab97ef4744c9443e10",
+      "End": "d72426333e9b46c4a77990e63e2ff726",
+      "Id": "58170333d72c46609b846c6d2807a4de"
+    },
+    {
+      "Start": "8836e1a4886c4d388138640f832acb06",
+      "End": "cd496497048c44b8991dcfb472e50255",
+      "Id": "1ba239b0315845459bba58dc520666e1"
+    },
+    {
+      "Start": "6642d02f28334922951016d5e5056e8c",
+      "End": "0dca8be349e848efb3f46ff3de2939cf",
+      "Id": "08e37ca76b9945fe84afc859b8a919a8"
+    },
+    {
+      "Start": "2481de5fae0f4d7f865d58825410cc5c",
+      "End": "814ad3368fdc4e84874e652af03b73bb",
+      "Id": "301953eb3c3b4028b27df640beedc2a5"
+    },
+    {
+      "Start": "ca9690dfad1f48a484f1ecdbeb3dce16",
+      "End": "78a176ba52524a6da893919f34be98c1",
+      "Id": "9f4e748df27c4fe5b5710612a57bf1eb"
+    },
+    {
+      "Start": "1b52be3476c64db2a7a0a967db2c6f54",
+      "End": "94dd43d2d6f04ecd887bcd5ad450a7a9",
+      "Id": "4aceac3b008642ba9389ccaff0944b7c"
+    },
+    {
+      "Start": "1b52be3476c64db2a7a0a967db2c6f54",
+      "End": "4495d6e58fab42dc9016d4671bbab450",
+      "Id": "a79f1b7e69824ed29f85c958f4c7d4f2"
+    },
+    {
+      "Start": "440b985cb8df48078b4403e4d6eb60b4",
+      "End": "732a669b618e43deadd5e0b7bce53bdf",
+      "Id": "23730cc7941245ba8f6dd77ff44fb1fe"
+    },
+    {
+      "Start": "e7d9cbcf25124e6bbb1bdaa6d90f641d",
+      "End": "6fdea9881f6c4e6a8a47ba3a6ced059f",
+      "Id": "d3e418b5dde64a8193b13d6166ca9ed1"
+    },
+    {
+      "Start": "1a5ba092f99d4d9ebd2a346478345e78",
+      "End": "d53ceb67e1d943ceb7edcc9c21ab366c",
+      "Id": "e75192db48364d69bafe67c36e869e45"
+    },
+    {
+      "Start": "eba000853648455ab07a8b4ac1c0a252",
+      "End": "b6a1be449e98487db516df7128b6b75e",
+      "Id": "33dab50e392d4770a21a93fbc8fcd3e1"
+    },
+    {
+      "Start": "95b6ebbfcdc44c959c779ea161f267e3",
+      "End": "5573844611354b7c84410e3dbdbd2a8a",
+      "Id": "7a22b8a2ac234447aca17f75a914c95e"
+    },
+    {
+      "Start": "a722465347224a74afa0c8e1a5e0bec0",
+      "End": "33874d5075384bcfb46a5ab41c3fa1be",
+      "Id": "7cec47b26c6f456d9c9182ac3c351e0c"
+    },
+    {
+      "Start": "41f284d8cb9b4d17adee24bd03d8fdb4",
+      "End": "29e5bfb61de944d0a2206f56e88326ac",
+      "Id": "26c9e8b2f12c4f1a897d311606b73e40"
+    },
+    {
+      "Start": "436efc0f21464639909aeb17fab60dcb",
+      "End": "557ba6a5318842eea9428d8382b3d84b",
+      "Id": "9efbd6b495814434b908f529a495861b"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.0.4654",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Data.ImportExcel",
+        "Id": "118e2ffcd0014083827f5ae31172f815",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 300.5,
+        "Y": 193.25
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "File Path",
+        "Id": "fb196a16d39e46d8bd29610f5fdd7eb1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -173.50068033774824,
+        "Y": 70.165126960724479
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "File From Path",
+        "Id": "e62be201a76a4d20ae9809754e3d190d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 110.35387966997069,
+        "Y": 128.95105223863868
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "287c7b1b790b4febb82f83fbfeee70f7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 55.362815780912911,
+        "Y": 243.94001793084385
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "3d81c4a9294a4fe9a95a105f3130d072",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 34.229423991223371,
+        "Y": 317.34236821466658
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "32b45371b3864400aa3f45910de3eb97",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 197.36184195785791,
+        "Y": -311.35769433108209
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "4ead381f29ca4b2d871ac30f005ee40a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 552.44829536278769,
+        "Y": 185.53542508977458
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Flatten",
+        "Id": "f85c8831892e487fbacae4ff30204c99",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 692.86863057131166,
+        "Y": 199.9274666712717
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Number",
+        "Id": "f4f06565c1f442149373d2f3006a3221",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 592.88726894005754,
+        "Y": 278.81424097681588
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Manage.RemoveNulls",
+        "Id": "e376af05a0c7493ead60ddab642795b6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 439.90313494101406,
+        "Y": 56.151847775991428
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "7cf55d5b620640718603823964292318",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1342.8727996137311,
+        "Y": 19.758481387815294
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Clean",
+        "Id": "9a9e8457a03c48a1afa71481aa671b32",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 919.80803294924192,
+        "Y": 146.79865540505375
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "df1a982537a54d6fb61f77f83d5d74f2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 926.39805757115209,
+        "Y": 265.70411652714535
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.GetItemAtIndex",
+        "Id": "baf729378bef4eb4a4ae5f3fd8e557e1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1675.949505345875,
+        "Y": 153.97832478646569
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Map",
+        "Id": "3994a6069154488e9c2542bd2c024245",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1550.2130806582065,
+        "Y": -14.449214166311947
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "7de708912f724c4bbde1c1a4707dda6d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1520.649196542294,
+        "Y": 238.06544734208921
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "1bafb4bea235473595664a067805478f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1982.1419795634051,
+        "Y": -166.60598537155346
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Manage.RemoveNulls",
+        "Id": "d430f7d5cec547bc83226d638ad86808",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1726.911266573971,
+        "Y": -131.80179723663019
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Transpose",
+        "Id": "93e41094596340e8adc1ed2eb794d634",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 922.84527914920523,
+        "Y": -103.24451466438541
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "24cd196f39ad44c1a4569356313655b2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1136.7294466613369,
+        "Y": 373.00834489116863
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "8e16de5bb59f4a73b668cd0297de08fd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 814.65463547501054,
+        "Y": 353.89979321257925
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script From String",
+        "Id": "8de2d97d961c4f468f310df8b0284626",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1327.1446051517987,
+        "Y": 407.94623755166089
+      }
+    ],
+    "Annotations": [],
+    "X": 237.65926611487416,
+    "Y": 314.31803716338464,
+    "Zoom": 0.50724409357326417
+  }
+}
